@@ -3,7 +3,7 @@
 Container exposes port 3000.
 Required configuration via environment variables:
 
-- MONGODB_URI:  `<set to mongoDB endpoint>`.
+- MONGODB_URI:  `<set to mongoDB endpoint>`. The database is called `webratings` so the format would look like `mongodb://localhost:27017/webratings`
 
 # Contributing
 
