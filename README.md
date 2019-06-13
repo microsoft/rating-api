@@ -1,3 +1,9 @@
+# rating-api
+
+Container exposes port 3000.
+Required configuration via environment variables:
+
+- MONGODB_URI:  `<set to mongoDB endpoint>`.
 
 # Contributing
 
