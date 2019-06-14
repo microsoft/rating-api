@@ -9,7 +9,7 @@ oc get pods
 Copy the data folder into the mongoDB pod
 
 ```sh
-oc rsync ./heros mongodb-1-c8msv:/opt/app-root/src
+oc rsync ./data mongodb-1-c8msv:/opt/app-root/src
 ```
 
 Connect to the remote shell on the pod
