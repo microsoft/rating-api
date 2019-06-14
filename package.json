@@ -4,7 +4,7 @@
   "description": "AKS Hackfest Rating api",
   "author": "Joey Schluchter <jschluchter@gmail.com>",
   "scripts": {
-    "start": "NODE_ENV='development' node ./bin/www"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "async": "^2.6.0",

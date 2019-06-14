@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var heroSchema = new mongoose.Schema({
+var itemchema = new mongoose.Schema({
     uid: Number,
     name: String,
     img: String,
@@ -8,4 +8,4 @@ var heroSchema = new mongoose.Schema({
     aliases: String
 });
 
-mongoose.model('Hero', heroSchema, 'heroes');
+mongoose.model('Item', itemSchema, 'items');
