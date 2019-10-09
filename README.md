@@ -5,7 +5,11 @@ Required configuration via environment variables:
 
 - MONGODB_URI:  `<set to mongoDB endpoint>`. The database is called `webratings` so the format would look like `mongodb://[endpoint]:27017/webratings`
 
+Upon startup, the application checks if it can connect to the database. If the database is empty, it populates it with data.
+
 # Contributing
+
+
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
