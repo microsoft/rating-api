@@ -56,23 +56,6 @@ mongoose.connect(process.env.MONGODB_URI, connectOptions, function(error){
       }
     });
 
-    // Check if the ratings are empty, insert mock data
-    Rate.count({}, function(err, c) {
-      if(c == 0) {
-        console.dir('No ratings found in the database. Loading data.');
-        var ratingsMock = require('./data/ratings.json');
-        Rate.collection.insertMany(ratingsMock, function(err,r) {
-          if(err) {
-            console.error('Error inserting ratings: ' + err);
-          } else {
-            console.dir('Ratings loaded.');
-          }
-        });
-      } else {
-        console.dir( c + ' ratings found in the database. Skipping loading data.');
-      }
-    });
-
     // Check if the sites are empty, insert mock data
     Site.count({}, function(err, c) {
       if(c == 0) {
