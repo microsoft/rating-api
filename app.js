@@ -40,31 +40,35 @@ mongoose.connect(process.env.MONGODB_URI, connectOptions, function(error){
     var Site = mongoose.model("Site");
 
     // Check if the items are empty, insert mock data
-    Item.find({}, function(err, items) {
-      if(items.length == 0) {
+    Item.count({}, function(err, c) {
+      if(c == 0) {
         console.dir('No items found in the database. Loading data.');
         var itemsMock = require('./data/items.json');
         Item.collection.insertMany(itemsMock, function(err,r) {});
       } else {
-        console.dir( items.length + ' items found in the database. Skipping loading data.');
+        console.dir( c + ' items found in the database. Skipping loading data.');
       }
     });
 
-    // Check if the items are empty, insert mock data
+    // Check if the ratings are empty, insert mock data
     Rate.count({}, function(err, c) {
       if(c == 0) {
         console.dir('No ratings found in the database. Loading data.');
         var ratingsMock = require('./data/ratings.json');
         Rate.collection.insertMany(ratingsMock, function(err,r) {});
+      } else {
+        console.dir( c + ' ratings found in the database. Skipping loading data.');
       }
     });
 
-    // Check if the items are empty, insert mock data
-    Site.countDocuments({}, function(err, c) {
+    // Check if the sites are empty, insert mock data
+    Site.count({}, function(err, c) {
       if(c == 0) {
         console.dir('No sites found in the database. Loading data.');
         var sitesMock = require('./data/sites.json');
         Site.collection.insertMany(sitesMock, function(err,r) {});
+      } else {
+        console.dir( c + ' sites found in the database. Skipping loading data.');
       }
     });
 
