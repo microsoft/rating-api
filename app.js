@@ -40,8 +40,8 @@ mongoose.connect(process.env.MONGODB_URI, connectOptions, function(error){
     var Site = mongoose.model("Site");
 
     // Check if the items are empty, insert mock data
-    Item.countDocuments({}, function(err, c) {
-      if(c == 0) {
+    Item.find({}, function(err, items) {
+      if(items.length == 0) {
         console.dir('No items found in the database. Loading data.');
         var itemsMock = require('./data/items.json');
         Item.collection.insertMany(itemsMock, function(err,r) {});
