@@ -108,6 +108,7 @@ router.post("/rate", function(req, res, next) {
       raterIp: ip,
       itemRated: input.ratings[i].id
     });
+    console.dir('Saving rating' + rating);
     rate.save().then(function(rate) {
       ratings.push(rate);
     });
