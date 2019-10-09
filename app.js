@@ -32,7 +32,7 @@ mongoose.Promise = global.Promise;
 var connectOptions = { useMongoClient: true, autoIndex: false};
 
 if(process.env.MONGODB_URI == undefined) {
-  console.err("process.env.MONGODB_URI is undefined. You need to provide the mongoDB connection information.");
+  console.error("process.env.MONGODB_URI is undefined. You need to provide the mongoDB connection information.");
 }
 
 mongoose.connect(process.env.MONGODB_URI, connectOptions, function(error){
