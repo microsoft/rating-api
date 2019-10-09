@@ -45,6 +45,8 @@ mongoose.connect(process.env.MONGODB_URI, connectOptions, function(error){
         console.dir('No items found in the database. Loading data.');
         var itemsMock = require('./data/items.json');
         Item.collection.insertMany(itemsMock, function(err,r) {});
+      } else {
+        console.dir( items.length + ' items found in the database. Skipping loading data.');
       }
     });
 
