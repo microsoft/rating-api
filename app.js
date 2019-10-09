@@ -49,7 +49,7 @@ mongoose.connect(process.env.MONGODB_URI, connectOptions, function(error){
     });
 
     // Check if the items are empty, insert mock data
-    Rate.countDocuments({}, function(err, c) {
+    Rate.count({}, function(err, c) {
       if(c == 0) {
         console.dir('No ratings found in the database. Loading data.');
         var ratingsMock = require('./data/ratings.json');
