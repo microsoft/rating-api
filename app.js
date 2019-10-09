@@ -44,7 +44,13 @@ mongoose.connect(process.env.MONGODB_URI, connectOptions, function(error){
       if(c == 0) {
         console.dir('No items found in the database. Loading data.');
         var itemsMock = require('./data/items.json');
-        Item.collection.insertMany(itemsMock, function(err,r) {});
+        Item.collection.insertMany(itemsMock, function(err,r) {
+          if(err) {
+            console.error('Error inserting items: ' + err);
+          } else {
+            console.dir('Items loaded.');
+          }
+        });
       } else {
         console.dir( c + ' items found in the database. Skipping loading data.');
       }
@@ -55,7 +61,13 @@ mongoose.connect(process.env.MONGODB_URI, connectOptions, function(error){
       if(c == 0) {
         console.dir('No ratings found in the database. Loading data.');
         var ratingsMock = require('./data/ratings.json');
-        Rate.collection.insertMany(ratingsMock, function(err,r) {});
+        Rate.collection.insertMany(ratingsMock, function(err,r) {
+          if(err) {
+            console.error('Error inserting ratings: ' + err);
+          } else {
+            console.dir('Ratings loaded.');
+          }
+        });
       } else {
         console.dir( c + ' ratings found in the database. Skipping loading data.');
       }
@@ -66,7 +78,13 @@ mongoose.connect(process.env.MONGODB_URI, connectOptions, function(error){
       if(c == 0) {
         console.dir('No sites found in the database. Loading data.');
         var sitesMock = require('./data/sites.json');
-        Site.collection.insertMany(sitesMock, function(err,r) {});
+        Site.collection.insertMany(sitesMock, function(err,r) {
+          if(err) {
+            console.error('Error inserting sites: ' + err);
+          } else {
+            console.dir('Sites loaded.');
+          }
+        });
       } else {
         console.dir( c + ' sites found in the database. Skipping loading data.');
       }
