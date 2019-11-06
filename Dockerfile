@@ -1,6 +1,6 @@
-FROM node:10-alpine
+FROM registry.access.redhat.com/ubi8/nodejs-10
 
-WORKDIR /usr/src/app
+WORKDIR /opt/app-root
 COPY package*.json ./
 RUN npm install
 
