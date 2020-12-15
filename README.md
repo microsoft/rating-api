@@ -1,5 +1,7 @@
 # rating-api
 
+**This repository has been deprecated. Content moved to: https://github.com/MicrosoftDocs/mslearn-aks-workshop-ratings-api**
+
 Container exposes port 8080.
 Required configuration via environment variables:
 
